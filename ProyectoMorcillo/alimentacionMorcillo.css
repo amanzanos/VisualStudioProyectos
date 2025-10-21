@@ -8,16 +8,19 @@ html, body {
   color: #222;
   font-size: 1rem;
 }
+.site-header {
+  background-image: url("assets/fondoHeader.jpg");
+}
 
 .site-header__image {
-  width: 100%;
+  width: 90%;
   height: 12.5rem;
   object-fit: cover;
   display: block;
   max-width: 56.25rem;
   margin: 0 auto;
   border-radius: 0.5rem;
-  border: 0.375rem solid #ffffff;
+  border: 0.1 solid #ffffff;
   box-shadow: 0 0.625rem 1.875rem rgba(0,0,0,0.18);
 }
 
@@ -103,7 +106,7 @@ html, body {
 }
 
 .site-footer {
-  background: #2b2b2b;
+  background-image: url("assets/fondoFooter.jpg");
   color: #ffffff;
   padding: 1rem 0;
   text-align: center;
