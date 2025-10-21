@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Morcillosa - Arroz a la cubana</title>
+    <link rel="icon" href="assets/morcilla.jpg">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="site-header">
+        <img src="assets/morcilla.jpg" alt="Morcilla" class="site-header__image" style="max-width:100%;height:200px;display:block;margin:0 auto;">
+    </header>
+
+    <main class="site-main" style="max-width: 100%; margin: 0 3em;">
+        <section class="recipe recipe--ingredients">
+            <h2 class="recipe__title">Ingredientes - Arroz a la cubana</h2>
+            <ol class="recipe__list">
+                <li>Arroz blanco (1 taza por persona)</li>
+                <li>Salsa de tomate</li>
+                <li>Huevos (1 por persona)</li>
+                <li>Plátanos maduros o bananas (opcional, para freír)</li>
+                <li>Aceite de oliva o de girasol</li>
+                <li>Ajo y cebolla (opcional, para la salsa)</li>
+                <li>Sal y pimienta al gusto</li>
+            </ol>
+        </section>
+
+        <section class="recipe recipe--preparation">
+            <h2 class="recipe__title">Elaboración</h2>
+            <ol class="recipe__steps">
+                <li>Cocinar el arroz en agua con sal hasta que esté suelto y tierno.</li>
+                <li>Preparar la salsa de tomate sofriendo ajo y cebolla, añadir tomate triturado y condimentar.</li>
+                <li>Freír los huevos hasta el punto deseado.</li>
+                <li>Freír los plátanos maduros en rodajas hasta que estén dorados (si se usan).</li>
+                <li>Servir una ración de arroz, cubrir con salsa de tomate, colocar el huevo frito encima y añadir las rodajas de plátano a un lado.</li>
+                <li>Ajustar sazón y servir caliente.</li>
+            </ol>
+        </section>
+
+        <section class="contact-form" >
+            <h2 class="contact-form__title">Formulario</h2>
+            <form class="contact-form__form" action="#" method="post" style="display: flex;flex-direction: column;">
+                <label class="contact-form__label" for="nombre">Nombre</label>
+                <input class="contact-form__input" id="nombre" name="nombre" type="text" required>
+
+                <label class="contact-form__label" for="edad">Edad</label>
+                <input class="contact-form__input" id="edad" name="edad" type="number" min="18" max="190" required>
+
+                <label class="contact-form__label" for="contrasena">Contraseña</label>
+                <input class="contact-form__input" id="contrasena" name="contrasena" type="password" required>
+
+                <button class="contact-form__submit" type="submit" style="margin-top: 3em;width: 6em; margin: 2em auto 0;">Enviar</button>
+            </form>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p class="site-footer__text">@2025 Morcillosa C/Embutido, 89 .</p>
+    </footer>
+</body>
+</html>
