@@ -14,10 +14,10 @@ html, body {
   object-fit: cover;
   display: block;
   max-width: 900px;
-  margin: 0 auto ;
+  margin: 0 auto;
   border-radius: 8px;
   border: 6px solid #ffffff;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.18);
 }
 
 .site-main {
@@ -48,13 +48,8 @@ html, body {
   margin: 0.375rem 0;
 }
 
-.contact-form__form {
-  display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
-  max-width: 480px;
-  width: 100%;
-  margin: 0.5rem auto 0;
+.contact-form {
+  margin-top: 1.5rem;
 }
 
 .contact-form__title {
@@ -68,6 +63,8 @@ html, body {
   flex-direction: column;
   gap: 0.25rem;
   max-width: 480px;
+  width: 100%;
+  margin: 0.5rem auto 0;
 }
 
 .contact-form__label {
@@ -81,7 +78,7 @@ html, body {
   padding: 0.6rem;
   border-radius: 6px;
   border: 1px solid rgba(0,0,0,0.08);
-  background: #fff;
+  background: #ffffff;
   font-size: 0.98rem;
   color: #222;
   outline: none;
@@ -93,20 +90,20 @@ html, body {
 }
 
 .contact-form__submit {
-  margin-top: 1.25rem;
+  margin-top: 1.5rem;
   align-self: center;
   padding: 0.6rem 1rem;
   border: none;
   border-radius: 6px;
   background: #2b2b2b;
-  color: #fff;
+  color: #ffffff;
   cursor: pointer;
   font-weight: 700;
 }
 
 .site-footer {
   background: #2b2b2b;
-  color: #fff;
+  color: #ffffff;
   padding: 1rem 0;
   text-align: center;
   flex-shrink: 0;
@@ -122,14 +119,15 @@ html, body {
   text-decoration: underline;
 }
 
-ul li:first-child {
+.recipe__list > li:first-child,
+ul > li:first-child {
   color: purple;
   font-size: 30px;
   line-height: 1.1;
   font-weight: 700;
 }
 
-ol li:first-child {
+.recipe__steps > li:first-child,
+ol > li:first-child {
   text-transform: uppercase;
 }
-
