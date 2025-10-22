@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <section id="calculos">
+        <p id="calculos__suma"></p>
+        <p id="calculos__media"></p>
+        <p id="calculos__argumentos"></p>
+        </section>
+
+    <script>
+        console.log("Página del 22 de Octubre cargada");
+        let nombre = "Alejandro";
+        console.log("Bienvenido, " + nombre + "!");
+        document.write("<p>Hola, " + nombre + "! Hoy es 22 de Octubre.</p>");
+        const suma = (() => {
+            let s = 0;
+            for (let i = 1; i <= 1000; i++) s += i;
+            return s;
+        })();
+
+        const mediaPrimeros102Impares = (() => {
+            const n = 102;
+            let s = 0;
+            for (let k = 1; k <= n; k++) s += 2 * k - 1;
+            return s / n;
+        })();
+
+
+        function sumaArgumentos(...args) {
+            return args.reduce((total, v) => total + (Number(v) || 0), 0);
+        }
+        const resultadoSumaArgumentos = sumaArgumentos(1, 2, 3, 4, 5);
+        console.log(`Suma de los argumentos: ${sumaArgumentos(1, 2, 3, 4, 5)}`);
+        
+        document.getElementById('calculos__suma').textContent = `Suma de 1 a 1000: ${suma}`;
+        document.getElementById('calculos__media').textContent = `Media de los primeros 102 números impares: ${mediaPrimeros102Impares}`;
+        document.getElementById('calculos__argumentos').textContent = `Suma de los argumentos: ${resultadoSumaArgumentos}`;
+
+    </script>
+    <h1>22 de Octubre</h1>
+    <p>Hoy es el 22 de Octubre, un día especial para muchos></p>
+</body>
+</html>
