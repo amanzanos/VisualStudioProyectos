@@ -34,6 +34,7 @@
       const apellido = apellidoInput.value.trim();
       if (!nombre || !apellido) return;
       nombreCompletoInput.value = `${nombre} ${apellido}`;
+      const longitudNombreCompleto = nombreCompletoInput.value.length; 
 
       nombreInput.value = '';
       apellidoInput.value = '';
@@ -47,7 +48,7 @@
       if (!nombreCompleto ) return;
 
       const li = document.createElement('li');
-      li.textContent = `${nombreCompleto}`;
+      li.textContent = `${nombreCompleto} (${nombreCompleto.length} caracteres)`;
 
       lista.appendChild(li);
 
