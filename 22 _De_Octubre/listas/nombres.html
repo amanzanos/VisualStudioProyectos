@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Personas</title>
+  <link rel="stylesheet" href="listas.css">
+</head>
+<body>
+  <h1>Personas</h1>
+
+  <div class="formulario">
+    <input id="nombreInput" type="text" placeholder="Nombre" aria-label="Nombre">
+    <input id="apellidoInput" type="text" placeholder="Apellido" aria-label="Apellido">
+    <button id="addNombreBtn" type="button">Añadir nombre</button>
+    <input id="nombreCompleto" type="text" placeholder="Nombre completo" aria-label="Nombre completo">
+    <button id="addPersonaBtn" type="button">Añadir persona</button>
+    <hr>
+    <ol id="listaPersonas" class="formulario__lista"></ol>
+  </div>
+
+  <script>
+    const nombreInput = document.getElementById('nombreInput');
+    const apellidoInput = document.getElementById('apellidoInput');
+    const nombreCompletoInput = document.getElementById('nombreCompleto');
+
+    const btnNombre = document.getElementById('addNombreBtn');
+    const btnPersona = document.getElementById('addPersonaBtn');
+
+    const lista = document.getElementById('listaPersonas');
+
+    function añadirNombreCompleto() {
+      const nombre = nombreInput.value.trim();
+      const apellido = apellidoInput.value.trim();
+      if (!nombre || !apellido) return;
+      nombreCompletoInput.value = `${nombre} ${apellido}`;
+
+      nombreInput.value = '';
+      apellidoInput.value = '';
+      nombreCompletoInput.focus();
+    }
+
+    
+    function añadirPersona() {
+      const nombreCompleto = nombreCompletoInput.value.trim();
+
+      if (!nombreCompleto ) return;
+
+      const li = document.createElement('li');
+      li.textContent = `${nombreCompleto}`;
+
+      lista.appendChild(li);
+
+      nombreCompletoInput.value = '';
+    }
+
+    btnNombre.addEventListener('click', añadirNombreCompleto);
+    btnPersona.addEventListener('click', añadirPersona);
+  </script>
+</body>
+</html>

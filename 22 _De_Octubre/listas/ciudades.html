@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ciudades</title>
+    <link rel="stylesheet" href="listas.css">
+</head>
+<body>
+    <h1>Ciudades</h1>
+
+    <div class="formulario">
+        <input id="ciudadInput" type="text" placeholder="Ingresa una ciudad" aria-label="Ciudad">
+        <button id="addCiudadBtn" type="button">Añadir ciudad</button>
+        <hr>
+        <ol id="lista" class="formulario__lista"></ol>
+    </div>
+
+
+    <script>
+        const input = document.getElementById('ciudadInput');
+        const btn = document.getElementById('addCiudadBtn');
+        const lista = document.getElementById('lista');
+
+        function añadirCiudad() {
+            const valor = input.value.trim();
+            if (!valor) return;
+            const li = document.createElement('li');
+            li.textContent = valor;
+            lista.appendChild(li);
+            input.value = '';
+            input.focus();
+        }
+
+        btn.addEventListener('click', añadirCiudad);
+    </script>
+</body>
+</html>

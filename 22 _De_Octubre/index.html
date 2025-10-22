@@ -23,8 +23,8 @@
             return s;
         })();
 
-        const mediaPrimeros102Impares = (() => {
-            const n = 102;
+        const mediaPrimeros103Impares = (() => {
+            const n = 103;
             let s = 0;
             for (let k = 1; k <= n; k++) s += 2 * k - 1;
             return s / n;
@@ -34,15 +34,15 @@
         function sumaArgumentos(...args) {
             return args.reduce((total, v) => total + (Number(v) || 0), 0);
         }
-        const resultadoSumaArgumentos = sumaArgumentos(1, 2, 3, 4, 5);
-        console.log(`Suma de los argumentos: ${sumaArgumentos(1, 2, 3, 4, 5)}`);
+        const resultadoSumaArgumentos = sumaArgumentos(8, 9, 1, 2);
+        console.log(`Suma de los argumentos: ${sumaArgumentos(8, 9, 1, 2)}`);
         
         document.getElementById('calculos__suma').textContent = `Suma de 1 a 1000: ${suma}`;
-        document.getElementById('calculos__media').textContent = `Media de los primeros 102 números impares: ${mediaPrimeros102Impares}`;
+        document.getElementById('calculos__media').textContent = `Media de los primeros 103 números impares: ${mediaPrimeros103Impares}`;
         document.getElementById('calculos__argumentos').textContent = `Suma de los argumentos: ${resultadoSumaArgumentos}`;
 
     </script>
     <h1>22 de Octubre</h1>
-    <p>Hoy es el 22 de Octubre, un día especial para muchos></p>
+    <p>Hoy es el 22 de Octubre, un día especial para muchos</p>
 </body>
 </html>
