@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Formulario</title>
+    <link rel="stylesheet" href="formulario.css" />
+  </head>
+  <body>
+    <form class="form" action="#" method="post" autocomplete="off">
+      <h1 class="form__title">Registro</h1>
+      <fieldset class="form__personal-fieldset">
+        <legend class="form__legend">Información personal</legend>
+        <div class="form__group">
+          <label class="form__label" for="name">Nombre</label>
+          <input
+            class="form__input"
+            id="name"
+            name="name"
+            type="text"
+            required
+          />
+        </div>
+        <div class="form__group form__group--small">
+          <label class="form__label" for="age">Edad</label>
+          <input
+            class="form__input"
+            id="age"
+            name="age"
+            type="number"
+            min="12"
+            max="120"
+            required
+          />
+        </div>
+
+        <div class="form__group">
+          <label class="form__label" for="email">Correo</label>
+          <input
+            class="form__input"
+            id="email"
+            name="email"
+            type="email"
+            required
+          />
+        </div>
+        <div class="form__group">
+          <label class="form__label" for="phone-numer">Telefono</label>
+          <input
+            class="form__input"
+            id="phone-numer"
+            name="phone-numer"
+            type="number"
+            required
+          />
+        </div>
+        <div class="form__group">
+          <label class="form__label" for="password">Adress</label>
+          <textarea
+            class="form__input form__input--textarea"
+            id="adress"
+            name="adress"
+            rows="4"
+            required
+          ></textarea>
+        </div>
+      </fieldset>
+      <fieldset class="form__freak-fieldset">
+        <legend class="form__legend">Datos Frikis</legend>
+        <div class="form__group">
+          <label class="form__label" for="language"
+            >Lenguaje de preferencia</label
+          >
+          <combobox class="form__input" id="language" name="language" required>
+            <option value="" disabled selected>Selecciona un lenguaje</option>
+            <option value="javascript">Español</option>
+            <option value="python">Ingés</option>
+            <option value="java">Francés</option>
+          </combobox>
+        </div>
+        <div class="form__group">
+          <label class="form__label" for="characters"
+            >Selecciona tu personaje favorito</label
+          >
+        </div>
+      </fieldset>
+
+      <div class="form__actions">
+        <button class="form__submit" type="submit">Enviar</button>
+        <button class="form__reset" type="reset">Restablecer</button>
+      </div>
+    </form>
+  </body>
+</html>
