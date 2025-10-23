@@ -50,7 +50,7 @@
             class="form__input"
             id="phone-numer"
             name="phone-numer"
-            type="number"
+            type="tel"
             required
           />
         </div>
@@ -68,20 +68,33 @@
       <fieldset class="form__freak-fieldset">
         <legend class="form__legend">Datos Frikis</legend>
         <div class="form__group">
-          <label class="form__label" for="language"
-            >Lenguaje de preferencia</label
-          >
-          <combobox class="form__input" id="language" name="language" required>
+          <label class="form__label" for="language">Lenguaje de preferencia</label>
+          <select class="form__input" id="language" name="language" required>
             <option value="" disabled selected>Selecciona un lenguaje</option>
-            <option value="javascript">Español</option>
-            <option value="python">Ingés</option>
-            <option value="java">Francés</option>
-          </combobox>
+            <option value="es">Español</option>
+            <option value="en">Inglés</option>
+            <option value="fr">Francés</option>
+          </select>
         </div>
         <div class="form__group">
           <label class="form__label" for="characters"
-            >Selecciona tu personaje favorito</label
-          >
+            >Selecciona tu personaje favorito</label>
+          <select class="form__input" id="characters" name="characters" required>
+            <option value="" disabled selected>Selecciona un personaje</option>
+            <optgroup label="Vengadores">
+              <option value="thor">Thor</option>
+              <option value="capitan-america">Capitán América</option>
+              <option value="hulk">Hulk</option>
+              <option value="ojo-de-halcon">Ojo de Halcón</option>
+            </optgroup>
+            <optgroup label="Cuatro Fantásticos">
+              <option value="mr-fantastico">Mr. Fantástico</option>
+              <option value="mujer-invisible">Mujer Invisible</option>
+              <option value="antorcha-humana">Antorcha Humana</option>
+              <option value="la-cosa">La Cosa</option>
+            </optgroup>
+          </select>
+          
         </div>
       </fieldset>
 
