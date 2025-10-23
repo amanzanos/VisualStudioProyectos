@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+</head>
+<body>
+    <h1>Calculadora exponencial:</h1>
+    <form id="datosFormExponente">
+        <input type="number" id="numBase" placeholder="Base" aria-label="Base">
+        <input type="number" id="numExponente" placeholder="Exponente" aria-label="Exponente">
+        <button type="button" id="multiplyExponent">Multiplicar por exponente</button>
+        <input type="text" id="resultExponent" placeholder="Resultado" aria-label="Resultado" readonly>
+    </form>
+    <h1>Calculadora:</h1>
+    <form id="datosForm">
+        <input type="text" id="resultExponentCalculator" placeholder="Resultado" aria-label="Resultado" readonly>
+        <button type="button" id="multiplyBtn">Multiplicar</button>
+        <input type="text" id="resultMultiply" placeholder="Resultado" aria-label="Resultado" readonly>
+
+    </form>
+
+    <script>
+
+        const multiplyBtn = document.getElementById('multiplyBtn');
+        const multiplyExponent = document.getElementById('multiplyExponent');
+        const resultInput = document.getElementById('resultExponent');
+        const resultMultiply = document.getElementById('resultMultiply');
+        const resultExponentCalculator = document.getElementById('resultExponentCalculator');
+
+        function multiplyNumbers() {
+            const numero = Number(resultExponentCalculator.value);
+            if (Number.isNaN(numero)) {
+                resultMultiply.value = 'No hay número válido';
+                return;
+            }
+            const result = Math.trunc(numero * numero);
+            resultMultiply.value = result;
+        }
+
+        function multiplyByExponent() {
+            const base = parseFloat(document.getElementById('numBase').value);
+            const exponent = parseFloat(document.getElementById('numExponente').value);
+            const resultExponentInput = document.getElementById('resultExponent');
+
+            if (isNaN(base) || isNaN(exponent)) {
+                resultExponentInput.value = 'Por favor introduce números válidos';
+                return;
+            }
+
+            const result = Math.pow(base, exponent);
+            resultExponentInput.value = result;
+            resultExponentCalculator.value = result;
+        }
+
+        multiplyBtn.addEventListener('click', multiplyNumbers);
+        multiplyExponent.addEventListener('click', multiplyByExponent);
+
+    </script>
+</body>
+</html>
