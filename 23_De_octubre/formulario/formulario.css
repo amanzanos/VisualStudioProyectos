@@ -18,9 +18,9 @@ body {
   max-width: 48rem;
   margin: 2.25rem auto;
   padding: 1.25rem;
-  background-image: url("assets/fondoFormulario.jpg");
-  background-repeat: no-repeat;
-  background-position: center top;
+   background: 
+    linear-gradient(0deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15)),
+    url("assets/fondoFormulario.jpg") center/cover no-repeat;
   background-size: cover;
   border-radius: 0.5rem;
   box-shadow: 0 0.5rem 1.5rem rgba(17, 24, 39, 0.06);
