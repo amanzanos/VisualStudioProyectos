@@ -4,6 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Formulario</title>
+    <link rel="icon" type="image/png" href="assets/logo-marvel.jpg" />
     <link rel="stylesheet" href="formulario.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;600;700&display=swap"
@@ -22,6 +23,7 @@
             name="name"
             type="text"
             required
+            placeholder="Introduce el nombre"
           />
         </div>
         <div class="form__group form__group--small">
@@ -34,6 +36,8 @@
             min="12"
             max="120"
             required
+            placeholder="Introduce la edad"
+
           />
         </div>
 
@@ -45,6 +49,7 @@
             name="email"
             type="email"
             required
+            placeholder="Introduce el correo electrónico"
           />
         </div>
         <div class="form__group">
@@ -55,6 +60,7 @@
             name="phone-numer"
             type="tel"
             required
+            placeholder="Introduce el número de teléfono"
           />
         </div>
         <div class="form__group">
@@ -65,6 +71,7 @@
             name="adress"
             rows="4"
             required
+            placeholder="Introduce la dirección"
           ></textarea>
         </div>
       </fieldset>
@@ -74,7 +81,7 @@
           <label class="form__label" for="language"
             >Lenguaje de preferencia</label
           >
-          <select class="form__input" id="language" name="language" required>
+          <select class="form__input" id="language" name="language" required >
             <option value="" disabled selected>Selecciona un lenguaje</option>
             <option value="es">Español</option>
             <option value="en">Inglés</option>

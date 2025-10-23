@@ -117,13 +117,9 @@ font-family: "Bebas Neue", sans-serif;
 
 .form__input:invalid {
   border-color: #f00;
-  color: #fff;
   box-shadow: 0 0 0.4rem rgba(237, 29, 36, 0.4);
 }
 
-.form__input:invalid::placeholder {
-  color: rgba(255, 255, 255, 0.7);
-}
 
 .form__input,
 .form__input:valid,
