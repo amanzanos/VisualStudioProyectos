@@ -5,7 +5,10 @@
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Formulario</title>
     <link rel="stylesheet" href="formulario.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <form class="form" action="#" method="post" autocomplete="off">
@@ -68,7 +71,9 @@
       <fieldset class="form__freak-fieldset">
         <legend class="form__legend">Datos Frikis</legend>
         <div class="form__group">
-          <label class="form__label" for="language">Lenguaje de preferencia</label>
+          <label class="form__label" for="language"
+            >Lenguaje de preferencia</label
+          >
           <select class="form__input" id="language" name="language" required>
             <option value="" disabled selected>Selecciona un lenguaje</option>
             <option value="es">Español</option>
@@ -78,8 +83,14 @@
         </div>
         <div class="form__group">
           <label class="form__label" for="characters"
-            >Selecciona tu personaje favorito</label>
-          <select class="form__input" id="characters" name="characters" required>
+            >Selecciona tu personaje favorito</label
+          >
+          <select
+            class="form__input"
+            id="characters"
+            name="characters"
+            required
+          >
             <option value="" disabled selected>Selecciona un personaje</option>
             <optgroup label="Vengadores">
               <option value="thor">Thor</option>
@@ -94,7 +105,19 @@
               <option value="la-cosa">La Cosa</option>
             </optgroup>
           </select>
-          
+        </div>
+        <div class="form__group">
+          <label class="form__label" for="favcolor"
+            >Color favorito (estilo héroe)</label
+          >
+          <input
+            class="form__input form__input--color"
+            type="color"
+            id="favcolor"
+            name="favcolor"
+            value="#ed1d24"
+            required
+          />
         </div>
       </fieldset>
 

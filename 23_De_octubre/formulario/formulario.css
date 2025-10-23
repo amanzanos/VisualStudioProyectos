@@ -59,6 +59,30 @@ font-family: "Bebas Neue", sans-serif;
   color: #0f1724;
   margin: 0;
 }
+.form__input--color {
+  width: 40%;
+  height: 3rem;
+  padding: 0;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  background: none;
+  transition: all 0.3s ease;
+}
+
+.form__input--color:hover {
+  box-shadow: 0 0 0.5rem rgba(237, 29, 36, 0.4);
+  transform: scale(1.02);
+}
+
+.form__input--color::-webkit-color-swatch-wrapper {
+  padding: 0;
+  border-radius: 0.5rem;
+}
+
+.form__input--color::-webkit-color-swatch {
+  border: none;
+  border-radius: 0.5rem;
+}
 .form__input {
   width: 100%;
   padding: 0.6rem 0.75rem;
@@ -67,8 +91,9 @@ font-family: "Bebas Neue", sans-serif;
   color: #0f1724;
   font-size: 1rem;
   outline: none;
-  border: solid 1px;
+  border: solid 1px white;
 }
+
 .form__input:hover {
   border-color: #ed1d24;
   box-shadow: 0 0 0.25rem rgba(237, 29, 36, 0.25);
@@ -77,6 +102,12 @@ font-family: "Bebas Neue", sans-serif;
 .form__input:focus {
   border-color: #ed1d24;
   box-shadow: 0 0 0.35rem rgba(237, 29, 36, 0.3);
+}
+
+.form__input:invalid:not(:focus):not(:placeholder-shown) {
+  border-color: #f00;
+  color: #fff;
+  box-shadow: 0 0 0.4rem rgba(237, 29, 36, 0.4);
 }
 
 .form__input:valid {
@@ -114,6 +145,7 @@ font-family: "Bebas Neue", sans-serif;
 }
 .form__submit,
 .form__reset {
+  font-family: "Montserrat", sans-serif;
   padding: 0.6rem 1rem;
   border-radius: 0.5rem;
   border: none;
