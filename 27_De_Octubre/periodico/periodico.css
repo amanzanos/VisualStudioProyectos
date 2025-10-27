@@ -16,15 +16,14 @@ body {
   height: 100%;
   object-fit: cover;
   z-index: -1;
-  opacity: 0.5;
-  filter: brightness(0.6);
+  opacity: 0.4;
+  filter: brightness(0.5);
 }
 
 header {
   text-align: center;
   background-color: #fff;
   padding: 1em;
-  border-bottom: 0.2em solid #333;
   position: relative;
   z-index: 2;
 }
@@ -90,6 +89,12 @@ header img {
   border-radius: 0.5em;
 }
 
+.imagen-con-descripcion img:hover {
+  filter: brightness(0.8);
+    transform: scale(1.1);
+
+}
+
 .descripcion-imagen {
   font-size: 0.9em;
   color: #666;
@@ -120,6 +125,53 @@ header img {
   line-height: 1;
   padding-right: 0.1em;
 }
+
+.relacionados {
+  margin-top: 2.5em;
+}
+
+.relacionados h3 {
+  text-align: center;
+  font-size: 1.5em;
+  margin-bottom: 1em;
+  color: #333;
+}
+
+.relacionados-contenedor {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2em;
+}
+
+.relacionado {
+  text-decoration: none;
+  color: inherit;
+  background-color: #fafafa;
+  border-radius: 0.5em;
+  overflow: hidden;
+  box-shadow: 0 0 0.8em rgba(0,0,0,0.1);
+  width: 20em;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.relacionado:hover {
+  transform: translateY(-0.3em);
+  box-shadow: 0 0 1.2em rgba(0,0,0,0.2);
+}
+
+.relacionado img {
+  width: 100%;
+  height: 12em;
+  object-fit: cover;
+}
+
+.relacionado h4 {
+  font-size: 1.1em;
+  padding: 1em;
+  text-align: center;
+}
+
 
 @media (max-width: 48em) {
   .texto-articulo {
