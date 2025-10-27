@@ -1,20 +1,155 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculadora Minimalista</title>
-    <link rel="stylesheet" href="calculadora.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora Alejandro Manzanos</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      font-size: 16px;
+    }
+
+    body {
+      font-family: 'Roboto Mono', monospace;
+      background: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .calculator {
+      background: #3b3a3a;
+      border-radius: 1em;
+      box-shadow: 0 0.3em 1em rgba(0, 0, 0, 0.2);
+      width: 40%;
+      max-width: 25em;
+      padding: 2em;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5em;
+    }
+
+    .calculator__display {
+      background: #b3aaaa;
+      color: #333;
+      border-radius: 0.6em;
+      padding: 0.8em;
+      font-size: 2rem;
+      text-align: right;
+      height: 2.5em;
+      outline: none;
+      border: none;
+    }
+
+    .calculator__panel {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.8em;
+    }
+
+    .calculator__button {
+      background: #5C5F73;
+      color: white;
+      border-radius: 0.5em;
+      padding: 0.8em;
+      font-size: 1.2rem;
+      cursor: pointer;
+      border: none;
+    }
+
+    .calculator__button:hover {
+      background: #73778C;
+    }
+
+    .calculator__button--operator {
+      background: #262626;
+      color: white;
+    }
+
+    .calculator__button--equals {
+      background: #262626;
+      color: white;
+      grid-column: span 2;
+    }
+
+    .calculator__button--clear {
+      background: #262626;
+      color: white;
+    }
+
+    .calculator__button--operator:hover,
+    .calculator__button--equals:hover,
+    .calculator__button--clear:hover {
+        background: #302f2f;
+    }
+
+  </style>
 </head>
 <body>
-    <div class="calculator">
-        <input type="text" id="visor" class="calculator__display" readonly>
+  <div class="calculator">
+    <input type="text" class="calculator__display" id="display" readonly>
+    <div class="calculator__panel" id="panel"></div>
+  </div>
 
-        <div id="botonera" class="calculator__numbers"></div>
+  <script>
+    const display = document.getElementById('display');
+    const panel = document.getElementById('panel');
+    let valor1 = 0;
+    let operacion = "";
 
-        <div id="operaciones" class="calculator__operations"></div>
-    </div>
+    for (let i = 9; i >= 0; i--) {
+      crearBoton(i, 'calculator__button', mostrarNumero);
+    }
 
-    <script src="calculadora.js"></script>
+    const operadores = ['+', '-', '*', '/', '^'];
+    operadores.forEach(op => {
+      crearBoton(op, 'calculator__button calculator__button--operator', seleccionarOperacion);
+    });
+
+    crearBoton('=', 'calculator__button calculator__button--equals', calcularResultado);
+    crearBoton('C', 'calculator__button calculator__button--clear', limpiar);
+
+    function crearBoton(texto, clase, accion) {
+      const btn = document.createElement('button');
+      btn.className = clase + ' calculator__button';
+      btn.textContent = texto;
+      btn.addEventListener('click', accion);
+      panel.appendChild(btn);
+    }
+
+    function mostrarNumero(e) {
+      display.value += e.target.textContent;
+    }
+
+    function seleccionarOperacion(e) {
+      valor1 = Number(display.value);
+      operacion = e.target.textContent;
+      display.value = '';
+    }
+
+    function calcularResultado() {
+      const valor2 = Number(display.value);
+      let resultado = 0;
+      switch (operacion) {
+        case '+': resultado = valor1 + valor2; break;
+        case '-': resultado = valor1 - valor2; break;
+        case '*': resultado = valor1 * valor2; break;
+        case '/': resultado = valor1 / valor2; break;
+        case '^': resultado = valor1 ** valor2; break;
+      }
+      display.value = resultado;
+    }
+
+    function limpiar() {
+      valor1 = 0;
+      operacion = "";
+      display.value = "";
+    }
+  </script>
 </body>
 </html>
