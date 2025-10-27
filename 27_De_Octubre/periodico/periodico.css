@@ -80,6 +80,7 @@ header img {
   flex-direction: column;
   align-items: flex-end;
   margin-bottom: 1em;
+  overflow: hidden;
 }
 
 .imagen-con-descripcion img {
@@ -91,7 +92,7 @@ header img {
 
 .imagen-con-descripcion img:hover {
   filter: brightness(0.8);
-    transform: scale(1.1);
+    transform: scale(1.05);
 
 }
 
