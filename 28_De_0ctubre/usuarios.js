@@ -1,26 +1,37 @@
 document.getElementById('btnBuscar').addEventListener('click', async () => {
-  const id = document.getElementById('userId').value.trim();
+  const tipo = document.getElementById('tipoBusqueda').value;
+  const valor = document.getElementById('userInput').value.trim();
   const resultado = document.getElementById('resultado');
-  let notFound = false;
   resultado.innerHTML = "";
 
-  if (!id) {
-    resultado.innerHTML = "<p>Por favor introduce un número de usuario.</p>";
+  if (!valor) {
+    resultado.innerHTML = "<p>Por favor introduce un valor de búsqueda.</p>";
     return;
   }
 
   try {
-    const userResponse = await fetch(`https://jsonplaceholder.typicode.com/users/${id}`);
-    if (!userResponse.ok) throw new Error("Usuario no encontrado");
-    const user = await userResponse.json();
+    let user;
+    if (tipo === "id") {
+      const userResponse = await fetch(`https://jsonplaceholder.typicode.com/users/${valor}`);
+      if (!userResponse.ok) throw new Error("Usuario no encontrado");
+      user = await userResponse.json();
+    } else {
+      const userResponse = await fetch(`https://jsonplaceholder.typicode.com/users`);
+      const users = await userResponse.json();
+      user = users.find(u => u.email.toLowerCase() === valor.toLowerCase());
+      if (!user) throw new Error("Usuario no encontrado");
+    }
 
-    const postsResponse = await fetch(`https://jsonplaceholder.typicode.com/users/${id}/posts`);
+    const postsResponse = await fetch(`https://jsonplaceholder.typicode.com/users/${user.id}/posts`);
     const posts = await postsResponse.json();
 
     const direccion = `${user.address.street}, ${user.address.suite}, ${user.address.city}, ${user.address.zipcode}`;
     resultado.innerHTML = `
       <h1>${user.name}</h1>
       <h2>${direccion}</h2>
+      <p><strong>Email:</strong> ${user.email}</p>
+      <p><strong>Teléfono:</strong> ${user.phone}</p>
+      <p><strong>Empresa:</strong> ${user.company.name}</p>
       <h3>Publicaciones:</h3>
     `;
 
@@ -33,7 +44,6 @@ document.getElementById('btnBuscar').addEventListener('click', async () => {
     resultado.appendChild(ul);
 
   } catch (error) {
-    notFound = true;
     window.location.href = "errors/notFoundPage.html";
   }
 });

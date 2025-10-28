@@ -10,8 +10,12 @@
   <div class="panel-usuario">
     <h1>Visor de Usuarios</h1>
 
-    <label for="userId">Número de usuario:</label>
-    <input type="number" id="userId" min="1" max="10" placeholder="Ej: 1">
+    <label for="tipoBusqueda">Buscar por:</label>
+    <select id="tipoBusqueda">
+      <option value="id">ID</option>
+      <option value="email">Email</option>
+    </select>
+    <input type="text" id="userInput" placeholder="Ej: 1 o ejemplo@correo.com">
     <button id="btnBuscar">OK</button>
   </div>
 
