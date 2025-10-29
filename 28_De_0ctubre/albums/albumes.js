@@ -26,6 +26,6 @@ document.getElementById('btnBuscar').addEventListener('click', async () => {
 
     resultado.appendChild(ul);
   } catch (error) {
-    window.location.href = "errors/notFoundPage.html?from=albumes";
+    window.location.href = "../errors/notFoundPage.html?from=albumes";
   }
 });
