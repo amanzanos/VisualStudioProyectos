@@ -88,6 +88,24 @@ header {
   transform: scale(1.05);
 }
 
+hr {
+  width: 80%;
+  border: 0;
+  height: 3px;
+  background: linear-gradient(to right, transparent, #1976d2, transparent);
+  margin: 3em auto;
+  border-radius: 10px;
+}
+#mapa {
+  margin: 3em auto;
+  max-width: 1000px;
+}
+
+#mapa h2 {
+  color: #0d47a1;
+  font-size: 2em;
+  margin-bottom: 0.5em;
+}
 .categorias {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
