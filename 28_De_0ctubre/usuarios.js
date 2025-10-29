@@ -44,6 +44,6 @@ document.getElementById('btnBuscar').addEventListener('click', async () => {
     resultado.appendChild(ul);
 
   } catch (error) {
-    window.location.href = "errors/notFoundPage.html";
+    window.location.href = "errors/notFoundPage.html?from=usuarios";
   }
 });

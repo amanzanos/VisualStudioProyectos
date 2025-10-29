@@ -7,6 +7,22 @@
   <link rel="stylesheet" href="notFoundPage.css">
 </head>
 <body>
-    <button onclick="window.location.href='../usuarios.html'">Volver</button>
+    <button id="btnVolver">Volver</button>
 </body>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const from = params.get('from');
+    const btnVolver = document.getElementById('btnVolver');
+
+    btnVolver.addEventListener('click', () => {
+      if (from === 'usuarios') {
+        window.location.href = '../usuarios.html';
+      } else if (from === 'albumes') {
+        window.location.href = '../albumes.html';
+      } else {
+        window.location.href = '../index.html';
+      }
+    });
+  </script>
 </html>
