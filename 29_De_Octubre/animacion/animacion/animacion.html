@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <title>Keyframe Animations - Imagen</title>
+
+  <style type="text/css">
+    body {
+      font-family: Arial, Verdana, sans-serif;
+      font-size: smaller;
+      padding: 1.5rem;
+    }
+
+    #pooltable {
+      width: 340px;
+      height: 200px;
+      margin-bottom: 50px;
+      border-radius: 5px;
+      background: green;
+      position: relative;
+      overflow: hidden;
+    }
+
+    #pooltable.animate {
+      background: blue;
+    }
+
+    #imagenAnimacion {
+      width: 40px;
+      height: 40px;
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      will-change: left, top, transform;
+    }
+
+    @keyframes imagenmovement {
+      0% {
+        left: 0px;
+        top: 0px;
+        transform: rotate(0deg);
+        animation-timing-function: ease-in;
+      }
+
+      33% {
+        left: 100px;
+        top: 160px;
+        transform: rotate(120deg);
+      }
+
+      66% {
+        left: 200px;
+        top: 0px;
+        transform: rotate(300deg);
+      }
+
+      100% {
+        left: 300px;
+        top: 160px;
+        transform: rotate(540deg);
+        animation-timing-function: ease-out;
+      }
+    }
+
+    #imagenAnimacion.animate {
+      animation-name: imagenmovement;
+      animation-duration: 10s;
+      animation-delay: 0.5s;
+      animation-timing-function: linear;
+      animation-iteration-count: 2;
+      animation-direction: alternate;
+    }
+
+    button {
+      padding: .5rem 1rem;
+      font-size: 1rem;
+    }
+
+    #messageLabel {
+      margin-top: 1rem;
+      font-size: .9rem;
+      color: #222;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="pooltable">
+    <img id="imagenAnimacion" src="lata-coca-cola-Photoroom.png" alt="Animación">
+  </div>
+
+  <button id="button" type="button">Start Animation</button>
+
+  <div id="messageLabel"></div>
+
+  <script>
+    let pooltable, imagen, button, messageLabel;
+
+    function init() {
+      pooltable = document.getElementById("pooltable");
+      imagen = document.getElementById("imagenAnimacion");
+      button = document.getElementById("button");
+      messageLabel = document.getElementById("messageLabel");
+
+      imagen.addEventListener("animationstart", function (e) {
+        pooltable.classList.add("animate");
+        messageLabel.innerHTML += `Animación <b>${e.animationName}</b> iniciada a las ${new Date().toLocaleTimeString()}.<br>`;
+      });
+
+      imagen.addEventListener("animationiteration", function (e) {
+        messageLabel.innerHTML += `Iteración de <b>${e.animationName}</b> completada. Tiempo transcurrido: ${e.elapsedTime.toFixed(2)}s.<br>`;
+      });
+
+      imagen.addEventListener("animationend", function (e) {
+        button.disabled = false;
+        imagen.classList.remove("animate");
+        pooltable.classList.remove("animate");
+        messageLabel.innerHTML += `Animación <b>${e.animationName}</b> finalizada. Tiempo total: ${e.elapsedTime.toFixed(2)}s.<br>`;
+      });
+
+      button.addEventListener("click", startAnimation);
+    }
+
+    function startAnimation() {
+      button.disabled = true;
+      imagen.classList.remove("animate");
+      void imagen.offsetWidth;
+      imagen.classList.add("animate");
+    }
+
+    window.addEventListener("DOMContentLoaded", init);
+  </script>
+</body>
+</html>
