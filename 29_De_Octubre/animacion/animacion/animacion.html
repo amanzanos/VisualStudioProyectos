@@ -116,6 +116,11 @@
         imagen.classList.remove("animate");
         pooltable.classList.remove("animate");
         messageLabel.innerHTML += `Animación <b>${e.animationName}</b> finalizada. Tiempo total: ${e.elapsedTime.toFixed(2)}s.<br>`;
+
+        setTimeout(() => {
+          window.location.href = "../gatos/gatos.html";
+        }, 2000);
+    
       });
 
       button.addEventListener("click", startAnimation);

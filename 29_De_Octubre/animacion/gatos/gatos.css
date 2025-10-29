@@ -167,11 +167,11 @@ hr {
 }
 
 .galeria {
+  background-image: url('assets/fondoMapa.jpg');
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 1em;
   margin: 2em;
-  padding: 1em;
 }
 
 .galeria img {
