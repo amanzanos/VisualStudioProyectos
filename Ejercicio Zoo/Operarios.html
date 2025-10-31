@@ -1,113 +1,230 @@
 ﻿<!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Equipo del Zoológico</title>
-  <link rel="stylesheet" href="styles/Operarios.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&display=swap" rel="stylesheet">
-  <script src="https://kit.fontawesome.com/a2e0d6a3e2.js" crossorigin="anonymous"></script>
-</head>
-<body>
-  <header>
-    <video autoplay muted loop playsinline id="videoFondo">
-      <source src="assets/media/videoOperadores.mp4" type="video/mp4">
-    </video>
-    <div class="header-overlay">
-      <div class="header-inner">
-        <img src="assets/logoZoo.png" alt="Logo Zoo" class="logo">
-        <div class="header-text">
-          <h1><i class="fas fa-paw"></i> Nuestro Equipo</h1>
-          <p>Personas dedicadas al bienestar y protección de los animales.</p>
-        </div>
-      </div>
-    </div>
-  </header>
-
-  <main>
-    <section class="carrusel">
-      <div class="carrusel-container">
-        <div class="operario-card">
-          <img src="Operarios/100x160/Operario01.jpg" alt="Lucía">
-          <div class="operario-info">
-            <i class="fas fa-cat"></i>
-            <h3>Lucía</h3>
-            <p>Cuidadora de felinos</p>
-          </div>
-        </div>
-        <div class="operario-card">
-          <img src="Operarios/100x160/Operario02.jpg" alt="Raúl">
-          <div class="operario-info">
-            <i class="fas fa-dragon"></i>
-            <h3>Raúl</h3>
-            <p>Especialista en reptiles</p>
-          </div>
-        </div>
-        <div class="operario-card">
-          <img src="Operarios/100x160/Operario03.jpg" alt="Clara">
-          <div class="operario-info">
-            <i class="fas fa-dove"></i>
-            <h3>Clara</h3>
-            <p>Entrenadora de aves</p>
-          </div>
-        </div>
-        <div class="operario-card">
-          <img src="Operarios/100x160/Operario04.jpg" alt="Marcos">
-          <div class="operario-info">
-            <i class="fas fa-user-md"></i>
-            <h3>Marcos</h3>
-            <p>Veterinario</p>
-          </div>
-        </div>
-        <div class="operario-card">
-          <img src="Operarios/100x160/Operario05.jpg" alt="Sara">
-          <div class="operario-info">
-            <i class="fas fa-hippo"></i>
-            <h3>Sara</h3>
-            <p>Cuidadora de mamíferos</p>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Equipo del Zoológico</title>
+    <link rel="stylesheet" href="styles/Operarios.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <video autoplay muted loop playsinline id="videoFondo">
+        <source src="assets/media/videoOperadores.mp4" type="video/mp4" />
+      </video>
+      <div class="header-overlay">
+        <div class="header-inner">
+          <img src="assets/logoZoo.png" alt="Logo Zoo" class="logo" />
+          <div class="header-text">
+            <h1><i class="fas fa-paw"></i> Nuestro Equipo</h1>
+            <p>Personas dedicadas al bienestar y protección de los animales.</p>
           </div>
         </div>
       </div>
-    </section>
+    </header>
 
-    <hr class="sep">
+    <main>
+      <section class="carrusel">
+        <div class="carrusel-container">
+          <div class="operario-card">
+            <img src="Operarios/100x160/Operario01.jpg" alt="Lucía" />
+            <div class="operario-info">
+              <i class="fas fa-cat"></i>
+              <h3>Lucía</h3>
+              <p>Cuidadora de felinos</p>
+              <button class="btn-toggle">
+                <i class="fas fa-chevron-down"></i>
+              </button>
+            </div>
+            <div class="descripcion-oculta">
+              <p>
+                Lucía pasa más tiempo ronroneando con los tigres que tomando
+                café ☕🐯.
+              </p>
+            </div>
+          </div>
 
-    <section class="formulario">
-      <div class="form-overlay">
-        <h2><i class="fas fa-leaf"></i> Añadir nuevo miembro del equipo</h2>
-        <form id="userForm" action="https://zoo-verde.com/registrar" method="POST">
-          <div class="input-group">
-            <i class="fas fa-user"></i>
-            <input type="text" id="nombre" name="nombre" placeholder="Nombre completo (10-20 caracteres)" minlength="10" maxlength="20" required>
+          <div class="operario-card">
+            <img src="Operarios/100x160/Operario02.jpg" alt="Raúl" />
+            <div class="operario-info">
+              <i class="fas fa-dragon"></i>
+              <h3>Raúl</h3>
+              <p>Especialista en reptiles</p>
+              <button class="btn-toggle">
+                <i class="fas fa-chevron-down"></i>
+              </button>
+            </div>
+            <div class="descripcion-oculta">
+              <p>
+                Raúl dice que los cocodrilos son sus compañeros de yoga 🐊🧘‍♂️.
+              </p>
+            </div>
           </div>
-          <div class="input-group">
-            <i class="fas fa-birthday-cake"></i>
-            <input type="number" id="edad" name="edad" placeholder="Edad" min="18" max="99" required>
-          </div>
-          <div class="input-group">
-            <i class="fas fa-map-pin"></i>
-            <input type="text" id="cp" name="cp" placeholder="Código Postal (5 dígitos)" pattern="[0-9]{5}" required>
-          </div>
-          <div class="input-group">
-            <i class="fas fa-home"></i>
-            <input type="text" id="direccion" name="direccion" placeholder="Dirección (máx. 100 caracteres)" maxlength="100" required>
-          </div>
-          <div class="input-group">
-            <i class="fas fa-phone"></i>
-            <input type="tel" id="telefono" name="telefono" placeholder="Teléfono (9 dígitos)" pattern="[0-9]{9}" required>
-          </div>
-          <div class="input-group">
-            <i class="fas fa-envelope"></i>
-            <input type="email" id="email" name="email" placeholder="Correo electrónico" required>
-          </div>
-          <button type="submit"><i class="fas fa-plus-circle"></i> Registrar miembro</button>
-        </form>
-      </div>
-    </section>
-  </main>
 
-  <footer>
-    <p>© 2025 Zoológico Verde | Cuidamos la fauna con pasión <i class="fas fa-heart"></i></p>
-  </footer>
-</body>
+          <div class="operario-card">
+            <img src="Operarios/100x160/Operario03.jpg" alt="Clara" />
+            <div class="operario-info">
+              <i class="fas fa-dove"></i>
+              <h3>Clara</h3>
+              <p>Entrenadora de aves</p>
+              <button class="btn-toggle">
+                <i class="fas fa-chevron-down"></i>
+              </button>
+            </div>
+            <div class="descripcion-oculta">
+              <p>
+                Clara enseña a los loros a cantar canciones de Shakira 🦜🎶.
+              </p>
+            </div>
+          </div>
+
+          <div class="operario-card">
+            <img src="Operarios/100x160/Operario04.jpg" alt="Marcos" />
+            <div class="operario-info">
+              <i class="fas fa-user-md"></i>
+              <h3>Marcos</h3>
+              <p>Veterinario</p>
+              <button class="btn-toggle">
+                <i class="fas fa-chevron-down"></i>
+              </button>
+            </div>
+            <div class="descripcion-oculta">
+              <p>Marcos tiene más pacientes peludos que humanos 🩺🐾.</p>
+            </div>
+          </div>
+
+          <div class="operario-card">
+            <img src="Operarios/100x160/Operario05.jpg" alt="Sara" />
+            <div class="operario-info">
+              <i class="fas fa-hippo"></i>
+              <h3>Sara</h3>
+              <p>Cuidadora de mamíferos</p>
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="descripcion-oculta">
+              <p>Sara jura que su hipopótamo entiende los chistes 😄🦛.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <hr class="sep" />
+
+      <section class="formulario">
+        <div class="form-overlay">
+          <h2><i class="fas fa-leaf"></i> Añadir nuevo miembro del equipo</h2>
+          <form
+            id="userForm"
+            action="https://zoo-verde.com/registrar"
+            method="POST"
+          >
+            <div class="input-group">
+              <i class="fas fa-user"></i>
+              <input
+                type="text"
+                id="nombre"
+                name="nombre"
+                placeholder="Nombre completo (10-20 caracteres)"
+                minlength="10"
+                maxlength="20"
+                required
+              />
+            </div>
+            <div class="input-group">
+              <i class="fas fa-birthday-cake"></i>
+              <input
+                type="number"
+                id="edad"
+                name="edad"
+                placeholder="Edad"
+                min="18"
+                max="99"
+                required
+              />
+            </div>
+            <div class="input-group">
+              <i class="fas fa-map-pin"></i>
+              <input
+                type="text"
+                id="cp"
+                name="cp"
+                placeholder="Código Postal (5 dígitos)"
+                pattern="[0-9]{5}"
+                required
+              />
+            </div>
+            <div class="input-group">
+              <i class="fas fa-home"></i>
+              <input
+                type="text"
+                id="direccion"
+                name="direccion"
+                placeholder="Dirección (máx. 100 caracteres)"
+                maxlength="100"
+                required
+              />
+            </div>
+            <div class="input-group">
+              <i class="fas fa-phone"></i>
+              <input
+                type="tel"
+                id="telefono"
+                name="telefono"
+                placeholder="Teléfono (9 dígitos)"
+                pattern="[0-9]{9}"
+                required
+              />
+            </div>
+            <div class="input-group">
+              <i class="fas fa-envelope"></i>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Correo electrónico"
+                required
+              />
+            </div>
+            <button type="submit">
+              <i class="fas fa-plus-circle"></i> Registrar miembro
+            </button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>
+        © 2025 Zoológico Verde | Cuidamos la fauna con pasión
+        <i class="fas fa-heart"></i>
+      </p>
+    </footer>
+    <script>
+      document.querySelectorAll(".btn-toggle").forEach((boton) => {
+        boton.addEventListener("click", (e) => {
+          const card = e.target.closest(".operario-card");
+          const descripcion = card.querySelector(".descripcion-oculta");
+          const icono = boton.querySelector("i");
+
+          descripcion.classList.toggle("activo");
+          boton.classList.toggle("rotado");
+
+          if (boton.classList.contains("rotado")) {
+            icono.classList.remove("fa-chevron-down");
+            icono.classList.add("fa-chevron-up");
+          } else {
+            icono.classList.remove("fa-chevron-up");
+            icono.classList.add("fa-chevron-down");
+          }
+        });
+      });
+    </script>
+  </body>
 </html>

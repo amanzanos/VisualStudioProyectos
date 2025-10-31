@@ -1,89 +1,137 @@
 ﻿<!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Animales | Zoológico Verde</title>
-  <link rel="stylesheet" type="text/css" href="styles/Animales.css" />
-  <script src="https://kit.fontawesome.com/a2e0e6c9c7.js" crossorigin="anonymous"></script>
-</head>
+  <head>
+    <meta charset="utf-8" />
+    <title>Animales - Mundo Salvaje</title>
+    <link rel="stylesheet" href="styles/Animales.css" />
+    <script
+      src="https://kit.fontawesome.com/a2d3b6d2d7.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
 
-<body>
-  <iframe src="Cabecera.html" style="width:100%; height:100px; border:none;"></iframe>
-
-  <video autoplay muted loop id="background-video">
-    <source src="videos/fondoIndex.mp4" type="video/mp4">
-  </video>
-
-  <header>
-    <h1>El Reino Animal en Nuestro Zoológico</h1>
-    <p class="subtitulo">Belleza, diversidad y conservación en un solo lugar</p>
-  </header>
-
-  <main class="articulo">
-    <section class="encabezado">
-      <span class="categoria">Reportaje</span>
-      <h2>La vida salvaje más cerca que nunca</h2>
-    </section>
-
-    <div class="imagen-con-descripcion">
-      <img src="Animales/150x75/Elefante.jpg" alt="Elefante africano">
-      <p class="descripcion-imagen">El elefante, símbolo de fuerza y sabiduría.</p>
-    </div>
-
-    <hr class="sep">
-
-    <div class="texto-articulo">
-      <p>
-        En la clasificación científica de los seres vivos, los animales (<strong>Animalia</strong>) o metazoos
-        (<strong>Metazoa</strong>) constituyen un reino que reúne un amplio grupo de organismos pluricelulares, eucariotas y
-        heterótrofos. Se caracterizan por su capacidad de movimiento y su desarrollo embrionario, que determina un plan corporal fijo.
+  <body>
+    <header>
+      <h1>Reino Animal</h1>
+      <p class="subtitulo">
+        Descubre la increíble diversidad de la vida en la Tierra
       </p>
-      <p>
-        Los animales pueden ser vertebrados o invertebrados y cumplen un papel esencial en el equilibrio ecológico del planeta.
-        En nuestro zoológico cuidamos con cariño a cada especie, desde los pequeños reptiles hasta los grandes mamíferos.
-      </p>
-      <p>
-        Los filos animales más conocidos aparecen en el registro fósil durante la denominada explosión cámbrica,
-        sucedida hace unos 540 millones de años. Este evento marcó el inicio de una diversidad biológica sin precedentes.
-      </p>
-    </div>
+    </header>
 
-    <hr class="sep">
+    <main>
+      <section class="articulo">
+        <div class="encabezado">
+          <p class="categoria">Ciencia & Naturaleza</p>
+          <h2>Los animales, una maravilla de la evolución</h2>
+        </div>
 
-    <section class="carrusel">
-      <img src="Animales/150x75/Caballo.jpg" alt="Caballo" draggable="true" ondragstart="drag(event)">
-      <img src="Animales/150x75/Camello.jpg" alt="Camello" draggable="true" ondragstart="drag(event)">
-      <img src="Animales/150x75/Cebra.jpg" alt="Cebra" draggable="true" ondragstart="drag(event)">
-      <img src="Animales/150x75/Leon.jpg" alt="León" draggable="true" ondragstart="drag(event)">
-      <img src="Animales/150x75/Rinoceronte.jpg" alt="Rinoceronte" draggable="true" ondragstart="drag(event)">
-      <img src="Animales/150x75/Zorro.jpg" alt="Zorro" draggable="true" ondragstart="drag(event)">
-    </section>
+        <div class="imagen-con-descripcion">
+          <img src="Animales/150x75/Elefante.jpg" alt="Elefante africano" />
+          <p class="descripcion-imagen">
+            El elefante africano, símbolo de fuerza y memoria.
+          </p>
+        </div>
 
-    <div class="zona-arrastre">
-      <p><i class="fa-solid fa-paw"></i> Arrastra una imagen de arriba hasta aquí para ampliarla</p>
-      <div class="big_animal" id="big_animal" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-    </div>
-  </main>
+        <hr class="sep" />
 
-  <footer>
-    <p>© 2025 Zoológico Verde | Cuidamos la fauna con pasión 🦥</p>
-  </footer>
+        <div class="texto-articulo">
+          <p>
+            En la clasificación científica de los seres vivos, los animales
+            (<em>Animalia</em>) o metazoos constituyen un reino que reúne un
+            amplio grupo de organismos eucariotas, heterótrofos y
+            pluricelulares. Su capacidad de movimiento, su diversidad de formas
+            y comportamientos, los hacen una de las expresiones más fascinantes
+            de la vida.
+          </p>
 
-  <script>
-    function allowDrop(ev) { ev.preventDefault(); }
-    function drag(ev) { ev.dataTransfer.setData("text", ev.target.src); }
-    function drop(ev) {
-      ev.preventDefault();
-      const src = ev.dataTransfer.getData("text");
-      const img = document.createElement("img");
-      img.src = src;
-      img.style.width = "100%";
-      img.style.height = "auto";
-      const container = document.getElementById("big_animal");
-      container.innerHTML = "";
-      container.appendChild(img);
-    }
-  </script>
-</body>
+          <p>
+            Desde las profundidades oceánicas hasta las cumbres más heladas,
+            cada especie cumple un papel vital en el equilibrio ecológico del
+            planeta. Mamíferos, aves, reptiles, anfibios, peces e invertebrados
+            componen este vasto tapiz biológico que ha evolucionado durante
+            millones de años.
+          </p>
+
+          <p>
+            Los animales no solo son parte del entorno natural, sino también
+            fuente de inspiración, cultura y aprendizaje para el ser humano.
+            Conocerlos es comprender mejor nuestro lugar en el mundo y la
+            importancia de conservar su hábitat.
+          </p>
+        </div>
+
+        <hr class="sep" />
+
+        <div class="carrusel">
+          <div class="carta-animal">
+            <img src="Animales/150x75/Leon.jpg" alt="León" />
+            <h4>León</h4>
+            <a href="Ecosistemas.html" class="boton-acompaname">
+              <i class="fas fa-paw"></i> Acompáñame
+            </a>
+          </div>
+
+          <div class="carta-animal">
+            <img src="Animales/150x75/Cebra.jpg" alt="Cebra" />
+            <h4>Cebra</h4>
+            <a href="Ecosistemas.html" class="boton-acompaname">
+              <i class="fas fa-paw"></i> Acompáñame
+            </a>
+          </div>
+
+          <div class="carta-animal">
+            <img src="Animales/150x75/Elefante.jpg" alt="Elefante" />
+            <h4>Elefante</h4>
+            <a href="Ecosistemas.html" class="boton-acompaname">
+              <i class="fas fa-paw"></i> Acompáñame
+            </a>
+          </div>
+
+          <div class="carta-animal">
+            <img src="Animales/150x75/Guepardo.jpg" alt="Guepardo" />
+            <h4>Guepardo</h4>
+            <a href="Ecosistemas.html" class="boton-acompaname">
+              <i class="fas fa-paw"></i> Acompáñame
+            </a>
+          </div>
+
+          <div class="carta-animal">
+            <img src="Animales/150x75/Zorro.jpg" alt="Zorro" />
+            <h4>Zorro</h4>
+            <a href="Ecosistemas.html" class="boton-acompaname">
+              <i class="fas fa-paw"></i> Acompáñame
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="seccion-infantil">
+        <div class="canguroo_canvas">
+          <img
+            class="canguroo"
+            src="Animales/Canguro.png"
+            alt="Canguro saltando"
+          />
+        </div>
+
+        <div class="zona-arrastre">
+          <p>
+            <i class="fas fa-hand-pointer"></i> Arrastra aquí tu animal favorito
+          </p>
+          <div
+            class="big_animal"
+            id="big_animal"
+            ondrop="drop(event)"
+            ondragover="allowDrop(event)"
+          ></div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>© 2025 Mundo Salvaje | Diseñado para aprender jugando</p>
+    </footer>
+
+    <script src="javascript/javascript.js"></script>
+  </body>
 </html>
