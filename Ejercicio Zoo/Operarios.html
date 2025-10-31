@@ -4,8 +4,9 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Equipo del Zoológico</title>
-  <link rel="stylesheet" href="styles/Operararios.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/Operarios.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a2e0d6a3e2.js" crossorigin="anonymous"></script>
 </head>
 <body>
   <header>
@@ -13,60 +14,100 @@
       <source src="assets/media/videoOperadores.mp4" type="video/mp4">
     </video>
     <div class="header-overlay">
-      <h1>🐾 Nuestro Equipo</h1>
-      <p>Cuidamos con pasión a cada ser vivo que forma parte de nuestra familia.</p>
+      <div class="header-inner">
+        <img src="assets/logoZoo.png" alt="Logo Zoo" class="logo">
+        <div class="header-text">
+          <h1><i class="fas fa-paw"></i> Nuestro Equipo</h1>
+          <p>Personas dedicadas al bienestar y protección de los animales.</p>
+        </div>
+      </div>
     </div>
   </header>
 
   <main>
     <section class="carrusel">
       <div class="carrusel-container">
-        <div class="operario-card"><img src="Operarios/100x160/Operario01.jpg"><h3>Lucía</h3><p>Cuidadora de felinos</p></div>
-        <div class="operario-card"><img src="Operarios/100x160/Operario02.jpg"><h3>Raúl</h3><p>Especialista en reptiles</p></div>
-        <div class="operario-card"><img src="Operarios/100x160/Operario03.jpg"><h3>Clara</h3><p>Entrenadora de aves</p></div>
-        <div class="operario-card"><img src="Operarios/100x160/Operario04.jpg"><h3>Marcos</h3><p>Veterinario</p></div>
-        <div class="operario-card"><img src="Operarios/100x160/Operario05.jpg"><h3>Sara</h3><p>Cuidadora de mamíferos</p></div>
-        <div class="operario-card"><img src="Operarios/100x160/Operario06.jpg"><h3>Álvaro</h3><p>Encargado de limpieza</p></div>
+        <div class="operario-card">
+          <img src="Operarios/100x160/Operario01.jpg" alt="Lucía">
+          <div class="operario-info">
+            <i class="fas fa-cat"></i>
+            <h3>Lucía</h3>
+            <p>Cuidadora de felinos</p>
+          </div>
+        </div>
+        <div class="operario-card">
+          <img src="Operarios/100x160/Operario02.jpg" alt="Raúl">
+          <div class="operario-info">
+            <i class="fas fa-dragon"></i>
+            <h3>Raúl</h3>
+            <p>Especialista en reptiles</p>
+          </div>
+        </div>
+        <div class="operario-card">
+          <img src="Operarios/100x160/Operario03.jpg" alt="Clara">
+          <div class="operario-info">
+            <i class="fas fa-dove"></i>
+            <h3>Clara</h3>
+            <p>Entrenadora de aves</p>
+          </div>
+        </div>
+        <div class="operario-card">
+          <img src="Operarios/100x160/Operario04.jpg" alt="Marcos">
+          <div class="operario-info">
+            <i class="fas fa-user-md"></i>
+            <h3>Marcos</h3>
+            <p>Veterinario</p>
+          </div>
+        </div>
+        <div class="operario-card">
+          <img src="Operarios/100x160/Operario05.jpg" alt="Sara">
+          <div class="operario-info">
+            <i class="fas fa-hippo"></i>
+            <h3>Sara</h3>
+            <p>Cuidadora de mamíferos</p>
+          </div>
+        </div>
       </div>
     </section>
 
+    <hr class="sep">
+
     <section class="formulario">
       <div class="form-overlay">
-        <h2>🦓 Añadir nuevo miembro del equipo</h2>
-        <form id="userForm" onsubmit="return validateUserForm()">
-          <label for="nombre">Nombre completo</label>
-          <input type="text" id="nombre" minlength="10" maxlength="20" required>
-
-          <label for="edad">Edad</label>
-          <input type="number" id="edad" min="18" max="99" required>
-
-          <label for="cp">Código Postal</label>
-          <input type="text" id="cp" pattern="[0-9]{5}" title="Debe tener 5 dígitos" required>
-
-          <label for="direccion">Dirección</label>
-          <input type="text" id="direccion" maxlength="100" required>
-
-          <label for="telefono">Teléfono</label>
-          <input type="tel" id="telefono" pattern="[0-9]{9}" title="Debe tener 9 números" required>
-
-          <label for="email">Correo electrónico</label>
-          <input type="email" id="email" required>
-
-          <button type="submit">Registrar miembro</button>
+        <h2><i class="fas fa-leaf"></i> Añadir nuevo miembro del equipo</h2>
+        <form id="userForm" action="https://zoo-verde.com/registrar" method="POST">
+          <div class="input-group">
+            <i class="fas fa-user"></i>
+            <input type="text" id="nombre" name="nombre" placeholder="Nombre completo (10-20 caracteres)" minlength="10" maxlength="20" required>
+          </div>
+          <div class="input-group">
+            <i class="fas fa-birthday-cake"></i>
+            <input type="number" id="edad" name="edad" placeholder="Edad" min="18" max="99" required>
+          </div>
+          <div class="input-group">
+            <i class="fas fa-map-pin"></i>
+            <input type="text" id="cp" name="cp" placeholder="Código Postal (5 dígitos)" pattern="[0-9]{5}" required>
+          </div>
+          <div class="input-group">
+            <i class="fas fa-home"></i>
+            <input type="text" id="direccion" name="direccion" placeholder="Dirección (máx. 100 caracteres)" maxlength="100" required>
+          </div>
+          <div class="input-group">
+            <i class="fas fa-phone"></i>
+            <input type="tel" id="telefono" name="telefono" placeholder="Teléfono (9 dígitos)" pattern="[0-9]{9}" required>
+          </div>
+          <div class="input-group">
+            <i class="fas fa-envelope"></i>
+            <input type="email" id="email" name="email" placeholder="Correo electrónico" required>
+          </div>
+          <button type="submit"><i class="fas fa-plus-circle"></i> Registrar miembro</button>
         </form>
       </div>
     </section>
   </main>
 
   <footer>
-    <p>© 2025 Zoológico Verde | Cuidamos la fauna con pasión 🦥</p>
+    <p>© 2025 Zoológico Verde | Cuidamos la fauna con pasión <i class="fas fa-heart"></i></p>
   </footer>
-
-  <script>
-    function validateUserForm() {
-      alert("Miembro registrado correctamente 🐾");
-      return false;
-    }
-  </script>
 </body>
 </html>
