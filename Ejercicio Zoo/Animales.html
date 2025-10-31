@@ -1,135 +1,89 @@
 ﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Animales | Zoológico Verde</title>
+  <link rel="stylesheet" type="text/css" href="styles/Animales.css" />
+  <script src="https://kit.fontawesome.com/a2e0e6c9c7.js" crossorigin="anonymous"></script>
+</head>
 
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="stylesheet" type="text/css" href="styles/ZooStyle.css" />
-    <title>Animales</title>
-  </head>
-  <body>
-    <article>
-      <h2>Animales</h2>
-      <p>
-        En la clasificación científica de los seres vivos, los animales
-        (Animalia) o metazoos (Metazoa) constituyen un reino que reúne un amplio
-        grupo de organismos que son eucariotas, heterótrofos, pluricelulares y
-        tisulares (excepto los poríferos). Se caracterizan por su amplia
-        capacidad de movimiento, por no tener cloroplasto (aunque hay
-        excepciones, como en el caso de Elysia chlorotica) ni pared celular, y
-        por su desarrollo embrionario; que atraviesa una fase de blástula y
-        determina un plan corporal fijo (aunque muchas especies pueden sufrir
-        una metamorfosis posterior). Los animales forman un grupo natural
-        estrechamente emparentado con los hongos (reino Fungi). Animalia es uno
-        de los cinco reinos del dominio Eukaryota, y a él pertenece el ser
-        humano.
-      </p>
-      <p>
-        Los filos animales más conocidos aparecen en el registro fósil durante
-        la denominada explosión cámbrica, sucedida en los mares hace unos 542 a
-        530 millones de años. Los animales se dividen en varios subgrupos,
-        algunos de los cuales son vertebrados: (aves, mamíferos, anfibios,
-        reptiles, peces) e invertebrados: artrópodos (insectos, arácnidos,
-        miríapodos, crustáceos), anélidos (lombrices, sanguijuelas), moluscos
-        (bivalvos, gasterópodos, cefalópodos), poríferos (esponjas), cnidarios
-        (medusas, pólipos, corales), equinodermos (estrellas de mar), nematodos
-        (gusanos clindricos), platelmintos (gusanos planos), etc.
-      </p>
-    </article>
-    <article>
-      <img
-        src="Animales/150x75/Caballo.jpg"
-        id="caballo"
-        draggable="true"
-        ondragstart="drag(event)"
-      />
-      <img
-        src="Animales/150x75/Camello.jpg"
-        id="camello"
-        draggable="true"
-        ondragstart="drag(event)"
-      />
-      <img
-        src="Animales/150x75/Cebra.jpg"
-        id="cebra"
-        draggable="true"
-        ondragstart="drag(event)"
-      />
-      <img
-        src="Animales/150x75/Coyote.jpg"
-        id="coyote"
-        draggable="true"
-        ondragstart="drag(event)"
-      />
-      <img
-        src="Animales/150x75/Elefante.jpg"
-        id="elefante"
-        draggable="true"
-        ondragstart="drag(event)"
-      />
-      <img
-        src="Animales/150x75/Gavilan.png"
-        id="gavilan"
-        draggable="true"
-        ondragstart="drag(event)"
-      />
-      <img
-        src="Animales/150x75/Guepardo.jpg"
-        id="guepardo"
-        draggable="true"
-        ondragstart="drag(event)"
-      />
-      <img
-        src="Animales/150x75/Leon.jpg"
-        id="leon"
-        draggable="true"
-        ondragstart="drag(event)"
-      />
-      <img
-        src="Animales/150x75/Oso.jpg"
-        id="oso"
-        draggable="true"
-        ondragstart="drag(event)"
-      />
-      <img
-        src="Animales/150x75/Pato.jpg"
-        id="pato"
-        draggable="true"
-        ondragstart="drag(event)"
-      />
-      <img
-        src="Animales/150x75/Pelicano.jpg"
-        id="pelicano"
-        draggable="true"
-        ondragstart="drag(event)"
-      />
-      <img
-        src="Animales/150x75/Rinoceronte.jpg"
-        id="rinoceronte"
-        draggable="true"
-        ondragstart="drag(event)"
-      />
-      <img
-        src="Animales/150x75/Zorro.jpg"
-        id="zorro"
-        draggable="true"
-        ondragstart="drag(event)"
-      />
-    </article>
+<body>
+  <iframe src="Cabecera.html" style="width:100%; height:100px; border:none;"></iframe>
 
-    <div class="canguroo_canvas">
-      <img class="canguroo" src="Animales/Canguro.png" />
+  <video autoplay muted loop id="background-video">
+    <source src="videos/fondoIndex.mp4" type="video/mp4">
+  </video>
+
+  <header>
+    <h1>El Reino Animal en Nuestro Zoológico</h1>
+    <p class="subtitulo">Belleza, diversidad y conservación en un solo lugar</p>
+  </header>
+
+  <main class="articulo">
+    <section class="encabezado">
+      <span class="categoria">Reportaje</span>
+      <h2>La vida salvaje más cerca que nunca</h2>
+    </section>
+
+    <div class="imagen-con-descripcion">
+      <img src="Animales/150x75/Elefante.jpg" alt="Elefante africano">
+      <p class="descripcion-imagen">El elefante, símbolo de fuerza y sabiduría.</p>
     </div>
 
-    <article>
-      <p>Arrastra aquí tu animal favorito para verlo mejor</p>
-      <div
-        class="big_animal"
-        id="big_animal"
-        ondrop="drop(event)"
-        ondragover="allowDrop(event)"
-      ></div>
-    </article>
+    <hr class="sep">
 
-    <script src="javascript/javascript.js"></script>
-  </body>
+    <div class="texto-articulo">
+      <p>
+        En la clasificación científica de los seres vivos, los animales (<strong>Animalia</strong>) o metazoos
+        (<strong>Metazoa</strong>) constituyen un reino que reúne un amplio grupo de organismos pluricelulares, eucariotas y
+        heterótrofos. Se caracterizan por su capacidad de movimiento y su desarrollo embrionario, que determina un plan corporal fijo.
+      </p>
+      <p>
+        Los animales pueden ser vertebrados o invertebrados y cumplen un papel esencial en el equilibrio ecológico del planeta.
+        En nuestro zoológico cuidamos con cariño a cada especie, desde los pequeños reptiles hasta los grandes mamíferos.
+      </p>
+      <p>
+        Los filos animales más conocidos aparecen en el registro fósil durante la denominada explosión cámbrica,
+        sucedida hace unos 540 millones de años. Este evento marcó el inicio de una diversidad biológica sin precedentes.
+      </p>
+    </div>
+
+    <hr class="sep">
+
+    <section class="carrusel">
+      <img src="Animales/150x75/Caballo.jpg" alt="Caballo" draggable="true" ondragstart="drag(event)">
+      <img src="Animales/150x75/Camello.jpg" alt="Camello" draggable="true" ondragstart="drag(event)">
+      <img src="Animales/150x75/Cebra.jpg" alt="Cebra" draggable="true" ondragstart="drag(event)">
+      <img src="Animales/150x75/Leon.jpg" alt="León" draggable="true" ondragstart="drag(event)">
+      <img src="Animales/150x75/Rinoceronte.jpg" alt="Rinoceronte" draggable="true" ondragstart="drag(event)">
+      <img src="Animales/150x75/Zorro.jpg" alt="Zorro" draggable="true" ondragstart="drag(event)">
+    </section>
+
+    <div class="zona-arrastre">
+      <p><i class="fa-solid fa-paw"></i> Arrastra una imagen de arriba hasta aquí para ampliarla</p>
+      <div class="big_animal" id="big_animal" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2025 Zoológico Verde | Cuidamos la fauna con pasión 🦥</p>
+  </footer>
+
+  <script>
+    function allowDrop(ev) { ev.preventDefault(); }
+    function drag(ev) { ev.dataTransfer.setData("text", ev.target.src); }
+    function drop(ev) {
+      ev.preventDefault();
+      const src = ev.dataTransfer.getData("text");
+      const img = document.createElement("img");
+      img.src = src;
+      img.style.width = "100%";
+      img.style.height = "auto";
+      const container = document.getElementById("big_animal");
+      container.innerHTML = "";
+      container.appendChild(img);
+    }
+  </script>
+</body>
 </html>

@@ -1,0 +1,102 @@
+body {
+  margin: 0;
+  font-family: 'Fredoka', sans-serif;
+  background-color: #f6fbf7;
+}
+
+.cabecera {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(135deg, #2e7d32, #4caf50);
+  padding: 0.8rem 1.5rem;
+  position: relative;
+  z-index: 10;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  color: white;
+}
+
+.logo img {
+  width: 50px;
+  height: auto;
+}
+
+.logo h1 {
+  font-size: 1.5rem;
+  margin: 0;
+  font-weight: 600;
+}
+
+.menu ul {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu ul li a {
+  text-decoration: none;
+  color: white;
+  font-weight: 600;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.menu ul li a:hover {
+  color: #c8e6c9;
+  transform: scale(1.05);
+}
+
+/* Hamburguesa */
+#menu-toggle {
+  display: none;
+}
+
+.menu-icon {
+  display: none;
+  color: white;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .menu ul {
+    flex-direction: column;
+    background: #388e3c;
+    position: absolute;
+    top: 70px;
+    right: 0;
+    width: 100%;
+    text-align: center;
+    gap: 1.2rem;
+    padding: 1.5rem 0;
+    display: none;
+    animation: slideDown 0.4s ease;
+  }
+
+  #menu-toggle:checked + .menu-icon + .menu ul {
+    display: flex;
+  }
+
+  .menu-icon {
+    display: block;
+  }
+
+  .logo h1 {
+    font-size: 1.3rem;
+  }
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
