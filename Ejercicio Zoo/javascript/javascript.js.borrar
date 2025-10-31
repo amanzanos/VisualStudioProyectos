@@ -1,0 +1,27 @@
+﻿function validateUserForm() {
+    var password = document.getElementById("password").value;
+    var age = document.getElementById("age").value;
+    var category = document.getElementById("category").value;
+    
+    if (category == "operario" && age < 22) {
+        alert('Un operador debe tener al menos 22 años')
+        return false;
+    } else {
+        return true;
+    }  
+}
+
+function drag(ev) {
+    ev.dataTransfer.setData("animal", ev.target.id);
+} 
+
+function drop(ev) {
+    ev.preventDefault();
+    var data = ev.dataTransfer.getData("animal");
+    document.getElementById("big_animal").style.backgroundImage = "url(" + "Animales/600x300/" + data + ".jpg" + ")";
+       
+}
+
+function allowDrop(ev) {
+    ev.preventDefault();    
+}
